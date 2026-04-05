@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Latest global news updates in real-time. Stay informed with breaking news, politics, technology, and more.">
+<meta name="keywords" content="latest news, global news, breaking news, world news, tech news">
+<meta name="author" content="GlobalNewsHub">
+<title>Global News Hub - Latest World News</title>
+
+<!-- Monetag Script -->
+<script src="https://quge5.com/88/tag.min.js" data-zone="224081" async data-cfasync="false"></script>
+
+<!-- Banner Ad Script -->
+<script>(function(s){s.dataset.zone='10833918',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f172a;
+  color: #fff;
+}
+header {
+  background: #020617;
+  padding: 15px;
+  text-align: center;
+}
+header h1 {
+  color: #38bdf8;
+}
+nav {
+  background: #1e293b;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+.news-card {
+  background: #1e293b;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.news-card h2 {
+  color: #38bdf8;
+}
+button {
+  background: #38bdf8;
+  border: none;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #020617;
+}
+</style>
+</head>
+
+<body>
+<header>
+<h1>🌍 Global News Hub</h1>
+<p>Latest Breaking News Worldwide</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Politics</a>
+<a href="#">Technology</a>
+<a href="#">Business</a>
+</nav>
+
+<div class="container" id="news"></div>
+
+<footer>
+<p>© 2026 Global News Hub | Powered by GitHub Pages</p>
+</footer>
+
+<script>
+const API_KEY = "f267f79fe2e84010b14e41a4b25bc30b";
+const newsContainer = document.getElementById("news");
+
+async function fetchNews() {
+  try {
+    const res = await fetch(`https://newsapi.org/v2/top-headlines?language=en&pageSize=10&apiKey=${API_KEY}`);
+    const data = await res.json();
+
+    newsContainer.innerHTML = "";
+
+    data.articles.forEach(article => {
+      const div = document.createElement("div");
+      div.className = "news-card";
+
+      div.innerHTML = `
+        <h2>${article.title}</h2>
+        <p>${article.description || "No description available."}</p>
+        <button onclick="goToAd('${article.url}')">Read More</button>
+      `;
+
+      newsContainer.appendChild(div);
+    });
+  } catch (err) {
+    newsContainer.innerHTML = "Failed to load news.";
+  }
+}
+
+function goToAd(url) {
+  window.open("https://omg10.com/4/10803952", "_blank");
+  setTimeout(() => {
+    window.location.href = url;
+  }, 2000);
+}
+
+fetchNews();
+</script>
+
+</body>
+</html>
